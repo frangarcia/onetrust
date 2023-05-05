@@ -36,7 +36,8 @@ OneTrust Privacy Management
 		<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
     </div>
     <script>
-    	console.log(OneTrust.GetDomainData());
+    	const activeConsentGroups = OnetrustActiveGroups?.split(",").filter((element) => element);
+    	console.log(activeConsentGroups);
     </script>
 </body>
 </html>
