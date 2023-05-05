@@ -6,7 +6,28 @@ OneTrust Privacy Management
 <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="8ca5c8a9-a80d-461f-a9b7-87ae9bd64fee" data-document-language="true"></script>
 
 <script type="text/javascript">
-  function OptanonWrapper() { }
+  function OptanonWrapper() {
+  	//OneTrust Cookies On Consent Listener to update the Foleon Cookie consent manager 
+	OneTrust.OnConsentChanged(function(e) {
+		console.log(e);
+		var cookies = {
+  			functional: false,
+  			analytics: false,
+  			marketing: false
+  		}
+  		if (e.detail.includes('2')) {
+  			console.log("Accepting analytics cookies");
+  			cookies.analytics = true;
+  		}
+  		if (e.detail.includes('4')) {
+  			console.log("Accepting functional cookies");
+  			cookies.functional = true;
+  		}
+		console.log("Setting privacy consents as:");
+        console.log(cookies);
+        NGX.Embed.setPrivacyConsents(cookies);
+	});
+  }
 </script>
 </head>
 <body>
@@ -14,5 +35,8 @@ OneTrust Privacy Management
         <script src="https://r-d-web.global.ssl.fastly.net/ui/ngx.embed.min.js"></script>
 		<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
     </div>
+    <script>
+    	console.log(OneTrust.GetDomainData());
+    </script>
 </body>
 </html>
