@@ -37,6 +37,25 @@ OneTrust Privacy Management
     </div>
     <script>
     	const activeConsentGroups = OnetrustActiveGroups?.split(",").filter((element) => element);
+    	var cookies = {
+  			functional: false,
+  			analytics: false,
+  			marketing: false
+  		}
+  		if (activeConsentGroups.includes('1')) {
+  			console.log("Accepting necessary cookies");
+  		}
+  		if (activeConsentGroups.includes('2')) {
+  			console.log("Accepting analytics cookies");
+  			cookies.analytics = true;
+  		}
+  		if (activeConsentGroups.includes('4')) {
+  			console.log("Accepting functional cookies");
+  			cookies.functional = true;
+  		}
+		console.log("Setting privacy consents as:");
+        console.log(cookies);
+        NGX.Embed.setPrivacyConsents(cookies);
     	console.log(activeConsentGroups);
     </script>
 </body>
