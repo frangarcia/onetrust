@@ -39,7 +39,7 @@ OneTrust Privacy Management
 <body>
     <div id="content">
         <script src="https://r-d-web.global.ssl.fastly.net/ui/ngx.embed.min.js"></script>
-		<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
+	<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
     </div>
     <script>
     	const activeConsentGroups = OnetrustActiveGroups?.split(",").filter((element) => element);
@@ -48,25 +48,25 @@ OneTrust Privacy Management
   			analytics: false,
   			marketing: false
   		}
-  		if (activeConsentGroups.includes('C0001')) {
-  			console.log("Accepting necessary cookies");
-  		}
-  		if (activeConsentGroups.includes('C0004')) {
-  			console.log("Accepting analytics cookies");
-  			cookies.analytics = true;
-  		}
-  		if (activeConsentGroups.includes('C0003')) {
-  			console.log("Accepting functional cookies");
-  			cookies.functional = true;
-  		}
-	        if (activeConsentGroups.includes('C0005')) {
-  			console.log("Accepting marketing cookies");
-  			cookies.marketing = true;
-  		}
-		console.log("Setting privacy consents as:");
-        	console.log(cookies);
-        	NGX.Embed.setPrivacyConsents(cookies);
-    		console.log(activeConsentGroups);
+  	if (activeConsentGroups.includes('C0001')) {
+  		console.log("Accepting necessary cookies");
+  	}
+  	if (activeConsentGroups.includes('C0004')) {
+  		console.log("Accepting analytics cookies");
+  		cookies.analytics = true;
+  	}
+  	if (activeConsentGroups.includes('C0003')) {
+  		console.log("Accepting functional cookies");
+  		cookies.functional = true;
+  	}
+	if (activeConsentGroups.includes('C0005')) {
+  		console.log("Accepting marketing cookies");
+  		cookies.marketing = true;
+  	}
+	console.log("Setting privacy consents as:");
+        console.log(cookies);
+        NGX.Embed.setPrivacyConsents(cookies);
+    	console.log(activeConsentGroups);
     </script>
 </body>
 </html>
