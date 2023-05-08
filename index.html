@@ -17,17 +17,21 @@ OneTrust Privacy Management
   			analytics: false,
   			marketing: false
   		}
-  		if (e.detail.includes('2')) {
+  		if (e.detail.includes('C0004')) {
   			console.log("Accepting analytics cookies");
   			cookies.analytics = true;
   		}
-  		if (e.detail.includes('4')) {
+  		if (e.detail.includes('C0003')) {
   			console.log("Accepting functional cookies");
   			cookies.functional = true;
   		}
+		if (e.detail.includes('C0005')) {
+  			console.log("Accepting marketing cookies");
+  			cookies.marketing = true;
+  		}
 		console.log("Setting privacy consents as:");
-        console.log(cookies);
-        NGX.Embed.setPrivacyConsents(cookies);
+        	console.log(cookies);
+        	NGX.Embed.setPrivacyConsents(cookies);
 	});
   }
 </script>
@@ -44,21 +48,25 @@ OneTrust Privacy Management
   			analytics: false,
   			marketing: false
   		}
-  		if (activeConsentGroups.includes('1')) {
+  		if (activeConsentGroups.includes('C0001')) {
   			console.log("Accepting necessary cookies");
   		}
-  		if (activeConsentGroups.includes('2')) {
+  		if (activeConsentGroups.includes('C0004')) {
   			console.log("Accepting analytics cookies");
   			cookies.analytics = true;
   		}
-  		if (activeConsentGroups.includes('4')) {
+  		if (activeConsentGroups.includes('C0003')) {
   			console.log("Accepting functional cookies");
   			cookies.functional = true;
   		}
+	        if (activeConsentGroups.includes('C0005')) {
+  			console.log("Accepting marketing cookies");
+  			cookies.marketing = true;
+  		}
 		console.log("Setting privacy consents as:");
-        console.log(cookies);
-        NGX.Embed.setPrivacyConsents(cookies);
-    	console.log(activeConsentGroups);
+        	console.log(cookies);
+        	NGX.Embed.setPrivacyConsents(cookies);
+    		console.log(activeConsentGroups);
     </script>
 </body>
 </html>
