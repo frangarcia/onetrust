@@ -8,6 +8,12 @@ OneTrust Privacy Management
 <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="d657fae6-199d-44a8-8491-1bf2bb1b2ad9" ></script>
 
 <script type="text/javascript">
+  const cookiesGroups = {
+	necessary:"C0001",  
+	functional:"C0003",
+	marketing:"C0004",
+	analytics:"C0005"
+  }
   function OptanonWrapper() {
   	//OneTrust Cookies On Consent Listener to update the Foleon Cookie consent manager 
 	OneTrust.OnConsentChanged(function(e) {
@@ -17,15 +23,15 @@ OneTrust Privacy Management
   			analytics: false,
   			marketing: false
   		}
-  		if (e.detail.includes('C0003')) {
+  		if (e.detail.includes(cookiesGroups.functional)) {
   			console.log("Accepting functional cookies");
   			cookies.functional = true;
   		}
-		if (e.detail.includes('C0004')) {
+		if (e.detail.includes(cookiesGroups.marketing)) {
   			console.log("Accepting marketing cookies");
   			cookies.marketing = true;
   		}
-		if (e.detail.includes('C0005')) {
+		if (e.detail.includes(cookiesGroups.analytics)) {
   			console.log("Accepting analytics cookies");
   			cookies.analytics = true;
   		}
@@ -41,18 +47,18 @@ OneTrust Privacy Management
   		analytics: false,
   		marketing: false
   	}
-  	if (activeConsentGroups.includes('C0001')) {
+  	if (activeConsentGroups.includes(cookiesGroups.necessary)) {
   		console.log("User accepted necessary cookies");
   	}
-  	if (activeConsentGroups.includes('C0003')) {
+  	if (activeConsentGroups.includes(cookiesGroups.functional)) {
   		console.log("User accepted functional cookies");
   		cookies.functional = true;
   	}
-	if (activeConsentGroups.includes('C0004')) {
+	if (activeConsentGroups.includes(cookiesGroups.marketing)) {
   		console.log("User accepted marketing cookies");
   		cookies.marketing = true;
   	}
-	if (activeConsentGroups.includes('C0005')) {
+	if (activeConsentGroups.includes(cookiesGroups.analytics)) {
   		console.log("User accepted analytics cookies");
   		cookies.analytics = true;
   	}
@@ -68,8 +74,5 @@ OneTrust Privacy Management
         <script src="https://r-d-web.global.ssl.fastly.net/ui/ngx.embed.min.js"></script>
 	<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
     </div>
-    <script>
-
-    </script>
 </body>
 </html>
