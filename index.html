@@ -49,18 +49,18 @@ OneTrust Privacy Management
   			marketing: false
   		}
   	if (activeConsentGroups.includes('C0001')) {
-  		console.log("Accepting necessary cookies");
+  		console.log("User accepted necessary cookies");
   	}
   	if (activeConsentGroups.includes('C0004')) {
-  		console.log("Accepting analytics cookies");
+  		console.log("User accepted analytics cookies");
   		cookies.analytics = true;
   	}
   	if (activeConsentGroups.includes('C0003')) {
-  		console.log("Accepting functional cookies");
+  		console.log("User accepted functional cookies");
   		cookies.functional = true;
   	}
 	if (activeConsentGroups.includes('C0005')) {
-  		console.log("Accepting marketing cookies");
+  		console.log("User accepted marketing cookies");
   		cookies.marketing = true;
   	}
 	console.log("Setting privacy consents as:");
