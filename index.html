@@ -34,15 +34,8 @@ OneTrust Privacy Management
         	NGX.Embed.setPrivacyConsents(cookies);
 	});
   }
-</script>
-</head>
-<body>
-    <div id="content">
-        <script src="https://r-d-web.global.ssl.fastly.net/ui/ngx.embed.min.js"></script>
-	<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
-    </div>
-    <script>
-    	const activeConsentGroups = OnetrustActiveGroups?.split(",").filter((element) => element);
+  function loadCookiesConsent() {
+	const activeConsentGroups = OnetrustActiveGroups?.split(",").filter((element) => element);
     	var cookies = {
   		functional: false,
   		analytics: false,
@@ -66,7 +59,17 @@ OneTrust Privacy Management
 	console.log("Setting privacy consents as:");
         console.log(cookies);
         NGX.Embed.setPrivacyConsents(cookies);
-    	console.log(activeConsentGroups);
+    	console.log(activeConsentGroups);	
+  }
+</script>
+</head>
+<body onLoad="loadCookiesConsent();">
+    <div id="content">
+        <script src="https://r-d-web.global.ssl.fastly.net/ui/ngx.embed.min.js"></script>
+	<iframe src="https://r-d-web.global.ssl.fastly.net/display/container/dc/66fed12f-a496-4874-9d3c-e57f9890c6b2?mode=responsive&scrolling=no" frameborder="0" scrolling="no" width="1600" height="900" id="ngxFrame174605" allowTransparency="true"></iframe>
+    </div>
+    <script>
+
     </script>
 </body>
 </html>
