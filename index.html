@@ -17,17 +17,17 @@ OneTrust Privacy Management
   			analytics: false,
   			marketing: false
   		}
-  		if (e.detail.includes('C0004')) {
-  			console.log("Accepting analytics cookies");
-  			cookies.analytics = true;
-  		}
   		if (e.detail.includes('C0003')) {
   			console.log("Accepting functional cookies");
   			cookies.functional = true;
   		}
-		if (e.detail.includes('C0005')) {
+		if (e.detail.includes('C0004')) {
   			console.log("Accepting marketing cookies");
   			cookies.marketing = true;
+  		}
+		if (e.detail.includes('C0005')) {
+  			console.log("Accepting analytics cookies");
+  			cookies.analytics = true;
   		}
 		console.log("Setting privacy consents as:");
         	console.log(cookies);
@@ -51,17 +51,17 @@ OneTrust Privacy Management
   	if (activeConsentGroups.includes('C0001')) {
   		console.log("User accepted necessary cookies");
   	}
-  	if (activeConsentGroups.includes('C0004')) {
-  		console.log("User accepted analytics cookies");
-  		cookies.analytics = true;
-  	}
   	if (activeConsentGroups.includes('C0003')) {
   		console.log("User accepted functional cookies");
   		cookies.functional = true;
   	}
-	if (activeConsentGroups.includes('C0005')) {
+	if (activeConsentGroups.includes('C0004')) {
   		console.log("User accepted marketing cookies");
   		cookies.marketing = true;
+  	}
+	if (activeConsentGroups.includes('C0005')) {
+  		console.log("User accepted analytics cookies");
+  		cookies.analytics = true;
   	}
 	console.log("Setting privacy consents as:");
         console.log(cookies);
