@@ -44,10 +44,10 @@ OneTrust Privacy Management
     <script>
     	const activeConsentGroups = OnetrustActiveGroups?.split(",").filter((element) => element);
     	var cookies = {
-  			functional: false,
-  			analytics: false,
-  			marketing: false
-  		}
+  		functional: false,
+  		analytics: false,
+  		marketing: false
+  	}
   	if (activeConsentGroups.includes('C0001')) {
   		console.log("User accepted necessary cookies");
   	}
